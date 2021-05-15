@@ -17,6 +17,8 @@ p {
 .consolePane {
     border: 1px solid gray;
     height: 50rem;
+    padding: 1rem;
+    overflow-y: scroll;
 }
 
 .inputtag {
@@ -31,4 +33,5 @@ p {
     border: none;
     outline: none;
     height: 30px;
+    width: 63rem;
 }
