@@ -87,7 +87,6 @@ function processInput(i) {
 
 
           <Col>
-            <h1>2</h1>
           </Col>
         </Row>
     </div>
