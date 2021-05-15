@@ -28,4 +28,11 @@ function cls(i) {
     return i;
 }
 
-export {help, scan, cls};
+
+function invalidInput(i) {
+    outputLines.push(`${i} : is not a valid command`);
+    outputLines.push("Type 'help' for a list of commands");
+    return outputLines;
+}
+
+export {help, scan, cls, invalidInput};

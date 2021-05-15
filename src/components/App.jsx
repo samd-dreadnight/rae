@@ -4,13 +4,11 @@ import Nav from 'react-bootstrap/Nav';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Commands from '../Objects/CommandList.js';
-
 import OutputIjector from '../components/Console/OutputInjector';
 import InputLine from '../components/Console/InputLine';
 
 import {cleanInput} from '../Objects/CommonFunctions.js';
-import {help, scan, cls} from '../Objects/Commands.js';
+import {help, scan, cls, invalidInput} from '../Objects/Commands.js';
 import '../css/App.css';
 
 
@@ -30,31 +28,24 @@ function submitInput(event) {
   }
 
 function processInput(i) {
-  var found = false;
   var cleanedInput = cleanInput(i);
-  Commands.forEach(command => {
-    if (cleanedInput === command.Name) {
-      found = true;
-      switch (cleanedInput) {
-        case "help": 
-          setOutputLines(help()); 
-          break;
+    switch (cleanedInput) {
+      case "help": 
+        setOutputLines(help()); 
+        break;
 
-        case "scan":
-          setOutputLines(scan());
-          break;
+      case "scan":
+        setOutputLines(scan());
+        break;
 
-        case "cls":
-          setOutputLines(cls(outputLines));
-          break;
+      case "cls":
+        setOutputLines(cls(outputLines));
+        break;
 
-        default:
+      default:
+        setOutputLines(invalidInput(cleanedInput));
+        console.log("Triggered!!!")
       }
-    }
-  });
-  if (!found) {
-    setOutputLines(outputLines.push(`${cleanedInput} : is not recognised as a valid command`))
-  }
 }
 
   return (
@@ -70,7 +61,7 @@ function processInput(i) {
       <Row>
         <Col xs={8}>
           <Container fluid>
-            <div className="consolePane">
+            <div id="pane" className="consolePane">
             {outputLines.map((line, index) => {
               return (
                 <OutputIjector output={line}/>
