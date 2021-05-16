@@ -5,8 +5,8 @@ function InputLine(props) {
     return (
         <div>
             <form action="#" autoComplete="off" onSubmit={props.submit}>
-                <label class="inputtag" for="inputbox">bluedawn@node01:~$</label>
-                <input class="inputarea" type="text" id="inputbox" value={props.value} onChange={props.change}></input>
+                <label className="inputtag" htmlFor="inputbox">bluedawn@node01:~$</label>
+                <input className="inputarea" type="text" autoFocus id="inputbox" value={props.value} onChange={props.change}></input>
             </form>
         </div>
     );
