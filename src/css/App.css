@@ -1,12 +1,13 @@
 body {
-    background-color: #313535;
+    background-color: #262828;
     overflow-x: hidden;
-    font-family: 'Syne Mono', monospace;
+    font-family: 'Inconsolata', monospace;
     font-size: 0.85rem;
 }
 
 h1 {
-    color: gray;
+    color: rgb(218, 218, 218);
+    font-size: 2rem;
 }
 
 p {
@@ -16,12 +17,29 @@ p {
     padding: none;
 }
 
-.nav {
-    font-size: 2rem;
+.navbar-light .navbar-text a {
+    color: #00a8e0;
 }
 
+.navbar {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.navbar-light .navbar-brand {
+    font-size: 2rem;
+    color: #00a8e0;
+}
+
+.navbar-light .navbar-text {
+    color: white;
+}
+
+
 .consolePane {
-    border: 1px solid #00a8e0;
+    border: solid #59828b;
+    border-width: 5px 0px 0px 0px;
+    background-color: #313535;
     border-radius: 1rem;
     height: 50rem;
     padding: 1rem;
@@ -42,8 +60,25 @@ p {
     width: 63rem;
 }
 .prompt-username {
-    color: #2cffb1;
+    color: #00a8e0;
 }
 .prompt-node {
-    color: #00a8e0;
+    color:#2cffb1;
+}
+
+
+
+
+.inventory {
+    height: 20rem;
+    width: 35rem;
+    background-color: #313535;
+    margin-bottom: 2rem;
+}
+
+.scratchInput {
+    color: white;
+    height: 22rem;
+    width: 35rem;
+    background-color: #313535;
 }

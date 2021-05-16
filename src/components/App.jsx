@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -56,12 +56,16 @@ function processInput(i) {
 
   return (
     <div>
+      <Navbar>
+        <Navbar.Brand className="brand" href="#home">RAE.net</Navbar.Brand>
+        <Navbar.Toggle />
+        <Navbar.Collapse className="justify-content-end">
+          <Navbar.Text>
+            Signed in as: <a href="#login">BlueDawn</a>
+          </Navbar.Text>
+        </Navbar.Collapse>
+      </Navbar>
 
-      <Nav defaultActiveKey="/home" as="ul">
-        <Nav.Item as="li">
-          <Nav.Link href="/home">RAE.net</Nav.Link>
-        </Nav.Item>
-      </Nav>
 
       <Row>
         <Col xs={8}>
@@ -76,6 +80,15 @@ function processInput(i) {
         </Col>
 
           <Col>
+          <div>
+            <h1>Inventory</h1>
+            <div className="inventory"></div>
+          </div>
+
+          <div>
+            <h1>Scratch Pad</h1>
+              <textarea className="scratchInput"></textarea>
+          </div>
           </Col>
         </Row>
     </div>
