@@ -7,7 +7,7 @@ body {
 
 h1 {
     color: rgb(218, 218, 218);
-    font-size: 2rem;
+    font-size: 1.3rem;
 }
 
 p {
@@ -49,6 +49,7 @@ p {
 .inputtag {
     color: white;
     margin-right: 5px;
+    font-size: 0.9rem;
 }
 
 .inputarea {
@@ -70,6 +71,8 @@ p {
 
 
 .inventory {
+    border: 1px solid white;
+    border-radius: 1rem;
     height: 20rem;
     width: 35rem;
     background-color: #313535;
@@ -77,8 +80,11 @@ p {
 }
 
 .scratchInput {
+    border: 1px solid white;
     color: white;
-    height: 22rem;
+    border-radius: 0rem 1rem 0rem 1rem;
+    outline: none;
+    height: 24rem;
     width: 35rem;
     background-color: #313535;
 }
