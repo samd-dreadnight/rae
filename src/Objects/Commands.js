@@ -6,12 +6,13 @@ function help() {
     Commands.forEach(command => {
         outputLines.push("-------------------");
         outputLines.push(`Command: ${command.Name}`);
+        outputLines.push("-------------------");
         outputLines.push(`Description: ${command.Description}`);
         command.Examples.forEach(example => {
             outputLines.push(example.Name);
             outputLines.push(example.Example);
+            outputLines.push(":END:");
         });
-        outputLines.push("-------------------");
     });
     return outputLines;
 }

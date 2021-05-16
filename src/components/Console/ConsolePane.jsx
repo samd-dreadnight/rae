@@ -1,9 +1,15 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import InputLine from './InputLine';
 import OutputInjector from './OutputInjector';
 
 function ConsolePane(props) {
   const bottomRef = useRef();
+
+  const [consoleClicked, setConsoleClicked] = useState(false);
+
+  function autofocusInput() {
+    setConsoleClicked(!consoleClicked);
+  }
 
   function scrollToBottom() {
     bottomRef.current.scrollIntoView({
@@ -16,7 +22,7 @@ function ConsolePane(props) {
   }, [props])
 
   return (
-    <div id="pane" className="consolePane">
+    <div id="pane" className="consolePane" onClick={autofocusInput}>
     {props.outputLines.map((line, index) => {
       return (
         <OutputInjector key={index} output={line}/>

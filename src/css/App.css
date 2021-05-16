@@ -1,6 +1,8 @@
 body {
     background-color: #313535;
     overflow-x: hidden;
+    font-family: 'Syne Mono', monospace;
+    font-size: 0.85rem;
 }
 
 h1 {
@@ -9,13 +11,18 @@ h1 {
 
 p {
     color: white;
-    font-size: small;
+
     margin: 0;
     padding: none;
 }
 
+.nav {
+    font-size: 2rem;
+}
+
 .consolePane {
-    border: 1px solid gray;
+    border: 1px solid #00a8e0;
+    border-radius: 1rem;
     height: 50rem;
     padding: 1rem;
     overflow-y: scroll;
@@ -24,7 +31,6 @@ p {
 .inputtag {
     color: white;
     margin-right: 5px;
-    font-size: small;
 }
 
 .inputarea {
@@ -34,4 +40,10 @@ p {
     outline: none;
     height: 30px;
     width: 63rem;
+}
+.prompt-username {
+    color: #2cffb1;
+}
+.prompt-node {
+    color: #00a8e0;
 }
