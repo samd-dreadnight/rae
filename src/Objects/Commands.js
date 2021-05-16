@@ -23,9 +23,10 @@ function scan() {
 }
 
 
-function cls(i) {
-    i = ["RAE Network connected : Type 'help'"];
-    return i;
+function cls() {
+    outputLines = ["RAE Network connected : Type 'help'"];
+    return outputLines;
+
 }
 
 

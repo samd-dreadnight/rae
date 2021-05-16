@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { scrollToBottom } from 'react-scroll/modules/mixins/animate-scroll';
 import InputLine from './InputLine';
 import OutputInjector from './OutputInjector';
 

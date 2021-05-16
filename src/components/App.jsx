@@ -41,7 +41,7 @@ function processInput(i) {
       break;
 
     case "cls":
-      setOutputLines(cls(outputLines));
+      setOutputLines(cls());
       break;
 
     default:
