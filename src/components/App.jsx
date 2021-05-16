@@ -24,8 +24,12 @@ function App() {
 
 function submitInput(event) {
     event.preventDefault();
+    if (input === "") {
+      setInput(" ");
+    } else {
+      setInput("");
+    }
     processInput(input);
-    setInput("");
   }
 
 
@@ -47,6 +51,7 @@ function processInput(i) {
     default:
       setOutputLines(invalidInput(cleanedInput));
   }
+  
 }
 
   return (
