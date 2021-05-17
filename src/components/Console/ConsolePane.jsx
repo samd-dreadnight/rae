@@ -30,7 +30,7 @@ function ConsolePane(props) {
     })}
       <InputLine
         change={props.handleChange} 
-        submit={props.submitInput}
+        submit={props.processInput}
         value={props.value}
       />
       <div ref={bottomRef}></div>

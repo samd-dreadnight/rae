@@ -5,7 +5,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import ConsolePane from '../components/Console/ConsolePane';
-
 import {cleanInput} from '../Objects/CommonFunctions.js';
 import {help, scan, cls, invalidInput} from '../Objects/Commands.js';
 import '../css/App.css';
@@ -22,19 +21,15 @@ function App() {
 }
 
 
-function submitInput(event) {
-    event.preventDefault();
-    if (input === "") {
-      setInput(" ");
-    } else {
-      setInput("");
-    }
-    processInput(input);
+function processInput(event) {
+  event.preventDefault();
+  var cleanedInput = cleanInput(input);
+  if (input === ""){
+    setInput(" ");
+  } else {
+    setInput("");
   }
-
-
-function processInput(i) {
-  var cleanedInput = cleanInput(i);
+    
   switch (cleanedInput) {
     case "help": 
       setOutputLines(help());
@@ -51,7 +46,6 @@ function processInput(i) {
     default:
       setOutputLines(invalidInput(cleanedInput));
   }
-  
 }
 
   return (
@@ -73,7 +67,7 @@ function processInput(i) {
           <ConsolePane
             outputLines={outputLines}
             handleChange={handleChange}
-            submitInput={submitInput}
+            processInput={processInput}
             value={input}
           />
           </Container>
