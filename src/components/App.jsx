@@ -12,41 +12,39 @@ import '../css/App.css';
 
 function App() {
 
-  const [input, setInput] = useState("");
+  const [reRender, setReRender] = useState(true);
+  const [input, setInput] = useState(null);
   const [outputLines, setOutputLines] = useState(["RAE Network connected : Type 'help'"]);
 
 
   function handleChange(event) {
     setInput(event.target.value);
-}
+  }
 
 
-function processInput(event) {
-  event.preventDefault();
-  var cleanedInput = cleanInput(input);
-  if (input === ""){
-    setInput(" ");
-  } else {
+  function processInput(event) {
+    event.preventDefault();
+    var cleanedInput = cleanInput(input);
     setInput("");
+    switch (cleanedInput) {
+      case "help": 
+        setOutputLines(help());
+        break;
+
+      case "scan":
+        setOutputLines(scan());
+        break;
+
+      case "cls":
+        setOutputLines(cls());
+        break;
+
+      default:
+        setOutputLines(invalidInput(cleanedInput));
+    }
+    setReRender(!reRender);
   }
-    
-  switch (cleanedInput) {
-    case "help": 
-      setOutputLines(help());
-      break;
 
-    case "scan":
-      setOutputLines(scan());
-      break;
-
-    case "cls":
-      setOutputLines(cls());
-      break;
-
-    default:
-      setOutputLines(invalidInput(cleanedInput));
-  }
-}
 
   return (
     <div>
